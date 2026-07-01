@@ -37,7 +37,7 @@ npm install
 
 **2. Setup Environment Variables:**
 * Rename the provided .env.example file to .env and paste your Discord User Token inside:
-```bash
+```env
 DISCORD_TOKEN=your_discord_token_here
 ```
 <details>
@@ -56,6 +56,7 @@ DISCORD_TOKEN=your_discord_token_here
 
 **3. Configure your Rich Presence:**
 * Rename the config.example.json file to config.json. Open it and modify the fields to match your desired status:
+
 ```json
 {
     "applicationId": "<YOUR_APPLICATION_ID>",
@@ -83,6 +84,18 @@ DISCORD_TOKEN=your_discord_token_here
     ]
   }
 ```
+
+<details>
+<summary><b>❓ How to get your Application ID (Click to expand)</b></summary>
+    
+- Go to the [Discord Developer Portal](https://discord.com/developers/applications).
+- Log in with your Discord account.
+- Click the **"New Application"** button in the top right corner.
+- Give your application a name (e.g., "My Custom Status") and click **Create**.
+- You will be taken to the **General Information** page. Look for the **Application ID**.
+- Click the **Copy** button under it and paste it into your `config.json` file.
+</details>
+
 ![Purple-Streaming-Status](assets/image-1.png)
 <br>
 ![Custom-Status](assets/image.png)
