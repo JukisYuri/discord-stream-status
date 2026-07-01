@@ -83,8 +83,9 @@ DISCORD_TOKEN=your_discord_token_here
     ]
   }
 ```
-![Purple-Streaming-Status](image-1.png)
-![Custom-Status](image.png)
+![Purple-Streaming-Status](assets/image-1.png)
+<br>
+![Custom-Status](assets/image.png)
 
 **4. Run it and enjoy:**
 ```bash
