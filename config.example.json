@@ -1,0 +1,25 @@
+{
+  "applicationId": "<YOUR_APPLICATION_ID>",
+  "type": "STREAMING",
+  "url": "https://twitch.tv/<YOUR_TWITCH_USERNAME>",
+  "name": "<YOUR_STREAM_NAME>",
+  "details": "<YOUR_STREAM_DESCRIPTION>",
+  "state": "<YOUR_STREAM_STATE>",
+  "useStartTimestamp": true,
+  "party": {
+    "current": 1,
+    "max": 5
+  },
+  "assets": {
+    "largeImage": "https://your-large-image.jpg",
+    "largeText": "<YOUR_LARGE_IMAGE_TEXT>",
+    "smallImage": "https://your-small-image.png",
+    "smallText": "<YOUR_SMALL_IMAGE_TEXT>"
+  },
+  "buttons": [
+    {
+      "label": "<YOUR_BUTTON_LABEL>",
+      "url": "<YOUR_BUTTON_URL>"
+    }
+  ]
+}
