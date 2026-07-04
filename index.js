@@ -28,15 +28,19 @@ client.on('ready', async () => {
                     const large = await RichPresence.getExternal(client, config.applicationId, config.assets.largeImage);
                     if (large && large[0]) rpc.setAssetsLargeImage(large[0].external_asset_path);
                 }
+                if (config.assets.largeText) rpc.setAssetsLargeText(config.assets.largeText);
+            } catch (error) {
+                console.error("Large Image Error: ", error.message);
+            }
+            try {
                 // Small image
                 if (config.assets.smallImage) {
                     const small = await RichPresence.getExternal(client, config.applicationId, config.assets.smallImage);
                     if (small && small[0]) rpc.setAssetsSmallImage(small[0].external_asset_path);
                 }
-                if (config.assets.largeText) rpc.setAssetsLargeText(config.assets.largeText);
                 if (config.assets.smallText) rpc.setAssetsSmallText(config.assets.smallText);
             } catch (error) {
-                console.error("Image Error: ", error.message);
+                console.error("Small Image Error: ", error.message);
             }
         }
         if (config.buttons && config.buttons.length > 0) {
