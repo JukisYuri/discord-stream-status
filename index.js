@@ -6,6 +6,15 @@ const client = new Client({ checkUpdate: false });
 client.on('ready', async () => {
     console.log(`Login: ${client.user.username}`);
     try {
+        if (!config.applicationId) {
+            console.error('Error: applicationId is not set in config.json');
+            return;
+        }
+        if (!config.type) {
+            console.error('Error: type is not set in config.json');
+            return;
+        }
+        console.log('ApplicationId:', config.applicationId);
         const rpc = new RichPresence(client)
             .setApplicationId(config.applicationId)
             .setType(config.type) // Options: PLAYING, STREAMING, LISTENING, WATCHING, COMPETING base on config
@@ -44,11 +53,14 @@ client.on('ready', async () => {
             }
         }
         if (config.buttons && config.buttons.length > 0) {
+            if (config.buttons.length > 2) {
+                    console.warn('Warning: Discord only supports up to 2 buttons. Extra buttons will be ignored.');
+                    return;
+                }
             config.buttons.forEach(btn => {
                 rpc.addButton(btn.label, btn.url);
             });
         }
-
         // Set the Rich Presence
         client.user.setActivity(rpc);
         console.log('Rich Presence updated successfully!');
