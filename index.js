@@ -53,11 +53,12 @@ client.on('ready', async () => {
             }
         }
         if (config.buttons && config.buttons.length > 0) {
+            let buttonsToSet = config.buttons;
             if (config.buttons.length > 2) {
                     console.warn('Warning: Discord only supports up to 2 buttons. Extra buttons will be ignored.');
-                    return;
-                }
-            config.buttons.forEach(btn => {
+                    buttonsToSet = config.buttons.slice(0, 2);
+            }
+            buttonsToSet.forEach(btn => {
                 rpc.addButton(btn.label, btn.url);
             });
         }
